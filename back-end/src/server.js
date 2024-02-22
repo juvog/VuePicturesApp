@@ -1,3 +1,4 @@
+
 import express from 'express';
 import { selectedIds as selectedIdsRaw, allPictures as allPicturesRaw } from './tempdata.js';
 
@@ -7,12 +8,9 @@ let allPictures = allPicturesRaw;
 const app = express();
 app.use(express.json());
 
-app.get('/hello', (req, res) => {
-  res.send('Hello!');
-});
 
 app.get('/pictures', (req, res) => {
-  res.json(pictures);
+  res.json(allPictures);
 });
 
 function FindPictures(ids) {
